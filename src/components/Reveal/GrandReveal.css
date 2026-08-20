@@ -1,0 +1,86 @@
+.reveal-container {
+  background-color: #000000; /* Darker background for cinematic pop */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+}
+
+.ambient-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.reveal-text-wrapper {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reveal-welcome {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  letter-spacing: 8px;
+  color: #a0b4c8;
+  margin-bottom: 2rem;
+}
+
+.reveal-logo-text {
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  font-weight: 700;
+  letter-spacing: 20px;
+  margin-bottom: 1rem;
+  background: linear-gradient(180deg, #ffffff 0%, var(--color-accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.3));
+}
+
+.reveal-full-name {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  letter-spacing: 12px;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.reveal-tagline {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  color: var(--color-accent-gold);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.reveal-visuals-wrapper {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.reveal-visual {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  /* Add a dark overlay so it feels cinematic and doesn't overwhelm the eye */
+  box-shadow: inset 0 0 150px rgba(0,0,0,1);
+}
+
+.reveal-visual::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(3, 10, 22, 0.4);
+}
