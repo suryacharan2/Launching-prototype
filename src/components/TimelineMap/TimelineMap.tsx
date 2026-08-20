@@ -7,7 +7,7 @@ interface TimelineMapProps {
   phase?: ScenePhase;
 }
 
-const TimelineMap: React.FC<TimelineMapProps> = ({ phase }) => {
+const TimelineMap: React.FC<TimelineMapProps> = ({ phase: _phase }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [year, setYear] = useState(1998);
 

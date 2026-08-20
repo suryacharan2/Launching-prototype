@@ -8,7 +8,7 @@ interface OverlaysProps {
   onSkip: () => void;
 }
 
-const Overlays: React.FC<OverlaysProps> = ({ phase, onBeginJourney, onSkip }) => {
+const Overlays: React.FC<OverlaysProps> = ({ phase, onBeginJourney, onSkip: _onSkip }) => {
   return (
     <div className="overlays-container">
       

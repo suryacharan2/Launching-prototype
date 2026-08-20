@@ -13,7 +13,7 @@ const Earth: React.FC<EarthProps> = ({ phase }) => {
   const cloudsRef = useRef<THREE.Mesh>(null);
 
   // Load high-res textures
-  const [colorMap, bumpMap, specularMap, cloudsMap] = useTexture([
+  const [colorMap, bumpMap, _specularMap, cloudsMap] = useTexture([
     'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_atmos_2048.jpg',
     'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_normal_2048.jpg',
     'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_specular_2048.jpg',
@@ -21,7 +21,7 @@ const Earth: React.FC<EarthProps> = ({ phase }) => {
   ]);
 
   useFrame(() => {
-    if (earthRef.current && phase === 'OPENING_SCREEN') {
+    if (earthRef.current && phase === 'PRE_LAUNCH') {
       earthRef.current.rotation.y += 0.0005;
     }
     if (cloudsRef.current) {
