@@ -5,27 +5,60 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .logo-display-wrapper {
-  background: white; /* The original logo has a white background, adding a clean white circle/square behind it can look good, or just display as is */
-  padding: 2rem;
+  background: white;
+  padding: 0; /* Zero padding to make the white background perfectly tight around the logo */
   border-radius: 50%;
+  aspect-ratio: 1 / 1;
   box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
   animation: logo-glow 3s infinite alternate;
+  flex-shrink: 0;
+  overflow: hidden; /* Clips the scaled image to keep the circle perfect */
 }
 
 .final-logo {
-  max-width: 80vw;
-  max-height: 80vh;
+  max-width: 50vw;
+  max-height: 50vh;
   width: 400px;
   height: auto;
-  border-radius: 50%; /* It's a circular logo */
+  border-radius: 50%;
   object-fit: contain;
+  transform: scale(1.05); /* Zooms the logo by 5% to decrease the visible white border */
 }
+
+.text-display-wrapper {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.typewriter-text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.highlight-text {
+  color: #ff5733; /* Orange/coral color from the reference image */
+}
+
 
 @keyframes logo-glow {
   0% {
@@ -33,5 +66,27 @@
   }
   100% {
     box-shadow: 0 10px 60px rgba(212, 175, 55, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .final-logo {
+    width: 280px;
+    max-width: 70vw;
+  }
+  
+  .typewriter-text {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+  }
+  
+  .text-display-wrapper {
+    text-align: center;
   }
 }
