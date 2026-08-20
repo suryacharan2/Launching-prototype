@@ -32,19 +32,20 @@
 
 .skip-btn {
   position: absolute;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.7);
   padding: 0.5rem 1rem;
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: clamp(0.65rem, 2vw, 0.8rem);
   letter-spacing: 2px;
   cursor: pointer;
   pointer-events: auto;
   transition: all 0.3s ease;
   z-index: 100;
+  touch-action: manipulation;
 }
 
 .skip-btn:hover {

@@ -77,3 +77,38 @@ h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent-gold);
 }
+
+/* ─── Global Mobile Utilities ─── */
+
+/* Prevent horizontal overflow on all screen sizes */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Fluid images */
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve tap target size on mobile */
+button, a, label[for] {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Prevent iOS text-size adjustment after orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Support safe area insets for notched phones */
+.experience-container,
+.main-site-container,
+.loader-container,
+.reveal-container {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}

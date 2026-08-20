@@ -20,7 +20,7 @@
 
 .year-counter {
   font-family: var(--font-heading);
-  font-size: 8rem;
+  font-size: clamp(3rem, 15vw, 8rem);
   color: var(--color-accent-gold);
   text-shadow: 0 0 40px rgba(212, 175, 55, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
   font-weight: 700;
@@ -32,6 +32,7 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
   animation: pulseGlow 2s infinite alternate;
+  white-space: nowrap;
 }
 
 @keyframes pulseGlow {
